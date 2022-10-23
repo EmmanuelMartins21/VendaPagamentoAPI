@@ -3,11 +3,13 @@ Foi construido uma API REST utilizando .NET que simula um processo de venda. A m
 possui persistência em um banco de dados.
 
 ## A CONSTRUÇÃO
-- A API e possui 3 operações:
+- A API e possui 4 operações:
   1) Registrar venda: Recebe os dados do vendedor + itens vendidos. Registra venda com status "Aguardando pagamento";
   2) Buscar venda: Busca pelo Id da venda;
   3) Atualizar venda: Permite que seja atualizado o status da venda.
      * OBS.: Possíveis status: `Pagamento aprovado` | `Enviado para transportadora` | `Entregue` | `Cancelada`.
+  4) Uma venda só poderá ser excluida se estiver com o Status `Cancelada` e for de uma data menor que 60 dias.
+
 - Uma venda contém informação sobre o vendedor que a efetivou, data, identificador do pedido e os itens que foram vendidos;
 - O vendedor deve possuir id, cpf, nome, e-mail e telefone;
 - A inclusão de uma venda deve possuir pelo menos 1 item;
@@ -17,8 +19,6 @@ possui persistência em um banco de dados.
   - De: `Pagamento Aprovado` Para: `Enviado para Transportadora`
   - De: `Pagamento Aprovado` Para: `Cancelada`
   - De: `Enviado para Transportador`. Para: `Entregue`
-- Uma venda só poderá ser excluida se estiver com o Status `Cancelada` e for de uma data menor que 60 dias.
-
 ## TECNOLOGIAS ENVOLVIDAS
 - C#.NET
 - API REST 
