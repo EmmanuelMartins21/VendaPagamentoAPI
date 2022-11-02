@@ -1,8 +1,12 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
+using Swashbuckle.Application;
 using WebAPI.Context;
 
 var builder = WebApplication.CreateBuilder(args);
+
+//Configura a documentação automatica do Swagger
+
 
 // Add services to the container.
 builder.Services.AddDbContext<OrganizadorContext>(options =>
@@ -24,6 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+ 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

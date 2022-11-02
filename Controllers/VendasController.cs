@@ -30,6 +30,13 @@ namespace WebAPI.Controllers
             return venda is null ? BadRequest(new { Erro = "A venda não pode ser vazia" }) : Ok(venda);
         }
 
+        [HttpGet]
+        public IActionResult ObterTodasVendas()
+        {
+            var venda = _context.Vendas;
+            return venda is null ? BadRequest(new { Erro = "A venda não pode ser vazia" }) : Ok(venda);
+        }
+
         [HttpPut("{id}")]
         public IActionResult AtualizarVendas(int id, Venda venda)
         {
