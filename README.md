@@ -20,7 +20,7 @@ possui persistência em um banco de dados.
       - De: `Enviado para Transportador`. Para: `Entregue`
   5) Uma venda só poderá ser excluida se estiver com o Status `Cancelada` e for de uma data menor que 60 dias.
 
-## ENDPOINTS
+## ENDPOINTS 
 - [HttpPost] </br>
      Request URL = `https://localhost:7071/Vendas`
 Grava um JSON da venda no formato: </br>
